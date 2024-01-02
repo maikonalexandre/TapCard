@@ -3,6 +3,7 @@ export declare global {
     interface RootParamList {
       //   create: undefined;
       home: undefined;
+      review: any;
       //   update: update;
     }
   }

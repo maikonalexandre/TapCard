@@ -3,6 +3,7 @@ import { Text, TouchableOpacity, View } from "react-native";
 import { CircularProgress } from "react-native-circular-progress";
 import colors from "tailwindcss/colors";
 import { twMerge } from "tailwind-merge";
+import { useNavigation } from "@react-navigation/native";
 
 interface DeckProps {
   title: string;
@@ -10,9 +11,14 @@ interface DeckProps {
 }
 
 export const Deck = ({ title, percentage = 0 }: DeckProps) => {
+  const navigation = useNavigation();
+
   return (
     <View className="w-full px-6 py-4 rounded-2xl mt-4 border border-zinc-200 ">
       <TouchableOpacity
+        onPress={() => {
+          navigation.navigate("review", { category: title });
+        }}
         activeOpacity={0.2}
         className="flex flex-row justify-between items-center"
       >
