@@ -11,10 +11,8 @@ export function Home() {
   return (
     <Container>
       <Header />
-      {/* <Text className="pt-4 text-base font-medium text-neutral-700 mb-2">
-        Decks:
-      </Text> */}
-      <Deck />
+
+      <Deck title="ingles" percentage={50} />
 
       <View className="flex-1 items-center justify-center px-8">
         <Text className="text-center text-base font-medium text-neutral-400">
