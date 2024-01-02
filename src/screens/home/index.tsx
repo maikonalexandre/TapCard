@@ -7,15 +7,12 @@ import { Feather } from "@expo/vector-icons";
 import colors from "tailwindcss/colors";
 import { Deck } from "../../components/Deck";
 
-import { useNavigation, useRoute } from "@react-navigation/native";
-
 export function Home() {
-
   return (
     <Container>
       <Header />
 
-      <Deck title="ingles" percentage={10}  />
+      <Deck title="ingles" percentage={10} />
       <Deck title="Espanhol" percentage={21} />
       <Deck title="Espanhol" percentage={90} />
 
