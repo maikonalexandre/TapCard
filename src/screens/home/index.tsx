@@ -12,7 +12,9 @@ export function Home() {
     <Container>
       <Header />
 
-      <Deck title="ingles" percentage={50} />
+      <Deck title="ingles" percentage={10} />
+      <Deck title="Espanhol" percentage={21} />
+      <Deck title="Espanhol" percentage={90} />
 
       <View className="flex-1 items-center justify-center px-8">
         <Text className="text-center text-base font-medium text-neutral-400">
@@ -21,7 +23,7 @@ export function Home() {
       </View>
       <TouchableOpacity
         activeOpacity={0.2}
-        className="absolute bottom-8 right-8 bg-orange-500 p-4 rounded-full"
+        className="absolute bottom-8 right-6 bg-orange-500 p-4 rounded-full"
       >
         <Feather name="plus" size={20} color={colors.stone[100]} />
       </TouchableOpacity>

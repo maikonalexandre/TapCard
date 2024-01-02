@@ -2,6 +2,7 @@ import React from "react";
 import { Text, TouchableOpacity, View } from "react-native";
 import { CircularProgress } from "react-native-circular-progress";
 import colors from "tailwindcss/colors";
+import { twMerge } from "tailwind-merge";
 
 interface DeckProps {
   title: string;
@@ -15,16 +16,35 @@ export const Deck = ({ title, percentage = 0 }: DeckProps) => {
         activeOpacity={0.2}
         className="flex flex-row justify-between items-center"
       >
-        <Text className="text-base font-medium text-zinc-600">{title}</Text>
+        <Text className="text-base font-medium text-zinc-600 underline ">
+          {title}
+        </Text>
         <CircularProgress
           size={30}
           width={2}
           fill={percentage}
-          tintColor={colors.emerald[500]}
+          tintColor={
+            percentage < 15
+              ? colors.red[500]
+              : percentage < 50
+              ? colors.orange[400]
+              : colors.emerald[500]
+          }
           backgroundColor={colors.stone[300]}
         >
           {(fill) => (
-            <Text className="text-[10px]  text-emerald-600">{fill}%</Text>
+            <Text
+              className={twMerge(
+                "text-[10px]",
+                percentage < 20
+                  ? "text-red-600"
+                  : percentage < 50
+                  ? "text-orange-500"
+                  : "text-emerald-600"
+              )}
+            >
+              {fill}%
+            </Text>
           )}
         </CircularProgress>
       </TouchableOpacity>
