@@ -10,7 +10,10 @@ import { Deck } from "../../components/Deck";
 export function Home() {
   return (
     <Container>
-      <Header />
+      <Header.Root>
+        <Header.Logo />
+        <Header.Button icon="settings" />
+      </Header.Root>
 
       <Deck title="ingles" percentage={10} />
       <Deck title="Espanhol" percentage={21} />

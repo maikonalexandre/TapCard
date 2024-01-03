@@ -1,4 +1,3 @@
-import { Header } from "../../components/Header";
 import { Container } from "../../components/Container";
 import React from "react";
 import {
@@ -10,14 +9,31 @@ import {
 } from "react-native";
 
 import { FlipCard } from "../../components/Flipcard";
+import { Header } from "../../components/Header";
+import { useNavigation } from "@react-navigation/native";
 
 export function Review() {
+  const navigation = useNavigation();
+
   return (
     <Container>
-      <Header />
+      <Header.Root>
+        <Header.Button
+          icon="chevron-left"
+          onPress={() => navigation.goBack()}
+        />
+        <Header.Button icon="plus-circle" />
+        <Header.Button icon="edit-2" />
+      </Header.Root>
       <FlipCard
-        backCardContent="olá meu lindo hoje voce ralou muito não"
-        frontCardContent="eita amigo lindo do caralho só"
+        backCardContent="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam officia
+        aliquam minus. Odit delectus harum minima magni animi vel quidem inventore
+        voluptatibus. Distinctio, eligendi placeat eos incidunt voluptates eum
+        voluptatem!"
+        frontCardContent="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam officia
+        aliquam minus. Odit delectus harum minima magni animi vel quidem inventore
+        voluptatibus. Distinctio, eligendi placeat eos incidunt voluptates eum
+        voluptatem!"
       />
       <View className="flex w-full flex-row justify-around">
         <TouchableOpacity>
