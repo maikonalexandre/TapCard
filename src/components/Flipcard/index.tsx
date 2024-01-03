@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React from "react";
 import { Pressable, StyleSheet, Text, View } from "react-native";
 import Animated, {
   interpolate,
@@ -45,6 +45,7 @@ export const FlipCard = ({
       ],
     };
   });
+
   const onAnimate = () => {
     const newValue = flipPositionAnimate.value === 0 ? 1 : 0;
     flipPositionAnimate.value = withTiming(newValue, { duration: 500 });
@@ -53,7 +54,7 @@ export const FlipCard = ({
   return (
     <Pressable
       onPress={onAnimate}
-      className="flex-1 mt-4  rounded overflow-hidden items-center justify-center relative"
+      className="flex-1 mt-4  rounded items-center justify-center relative"
     >
       <Animated.View
         style={[
@@ -65,7 +66,9 @@ export const FlipCard = ({
         ]}
       >
         <View className="flex-1 bg-stone-200 p-4 items-center justify-center ">
-          <Text className="text-center">{frontCardContent}</Text>
+          <Text className="text-center text-base font-medium text-neutral-600">
+            {frontCardContent}
+          </Text>
         </View>
       </Animated.View>
 
@@ -79,7 +82,9 @@ export const FlipCard = ({
         ]}
       >
         <View className="flex-1 bg-stone-200  p-4 items-center justify-center ">
-          <Text className="text-center">{backCardContent}</Text>
+          <Text className="text-center text-base font-medium text-neutral-600">
+            {backCardContent}
+          </Text>
         </View>
       </Animated.View>
     </Pressable>
